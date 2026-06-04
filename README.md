@@ -23,6 +23,12 @@ Billing is not connected. The MVP uses early-access, demo-request, and purchase-
 
 - Landing page: https://ert93333-ops.github.io/schema-markup-qa-briefs/
 - Checklist: https://ert93333-ops.github.io/schema-markup-qa-briefs/schema-markup-qa-checklist.html
+- GitHub Gist checklist: https://gist.github.com/ert93333-ops/8c0318bb3a595b165e30c96c3ecf3658
+
+## Marketing Test Links
+
+- Product from Gist: https://ert93333-ops.github.io/schema-markup-qa-briefs/?utm_source=github_gist&utm_medium=organic&utm_campaign=schema_markup_qa_launch
+- Checklist from Gist: https://ert93333-ops.github.io/schema-markup-qa-briefs/schema-markup-qa-checklist.html?utm_source=github_gist&utm_medium=organic&utm_campaign=schema_markup_qa_checklist
 
 ## Constraints
 
