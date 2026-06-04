@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schema Markup QA Briefs | Schema markup QA checklist</title>
+    <meta
+      name="description"
+      content="Paste JSON-LD and a visible-page summary to catch schema markup syntax, field, duplicate, URL, image, and page-content mismatch risks before publishing."
+    >
+    <link rel="canonical" href="https://ert93333-ops.github.io/schema-markup-qa-briefs/">
+    <meta property="og:title" content="Schema Markup QA Briefs">
+    <meta property="og:description" content="Catch JSON-LD schema gaps before pages and templates go live.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ert93333-ops.github.io/schema-markup-qa-briefs/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-product="Schema Markup QA Briefs">
+    <a class="skip-link" href="#workflow">Skip to schema audit</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Schema Markup QA Briefs home">
+          <span class="brand-mark" aria-hidden="true">SD</span>
+          <span>Schema Markup QA Briefs</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#workflow">Auditor</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#waitlist">Early access</a>
+          <a href="schema-markup-qa-checklist.html">Checklist</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="shell hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Schema markup QA checklist</p>
+            <h1>Catch JSON-LD schema gaps before pages go live.</h1>
+            <p class="hero-subtitle">
+              Paste schema markup and a visible-page summary to flag syntax errors, missing fields,
+              product/offer issues, duplicate entities, visible-content mismatch, URL/image gaps, and rich-result test reminders.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#workflow" data-track-cta="hero_audit">Audit sample schema markup</a>
+              <a class="button secondary" href="#waitlist" data-track-cta="hero_waitlist">Request early access</a>
+            </div>
+            <dl class="signal-row" aria-label="Launch facts">
+              <div>
+                <dt>No live crawl</dt>
+                <dd>Paste-in static MVP</dd>
+              </div>
+              <div>
+                <dt>Schema QA</dt>
+                <dd>JSON-LD + visible content</dd>
+              </div>
+              <div>
+                <dt>$59/mo</dt>
+                <dd>Agency hypothesis</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="product-preview reveal" aria-label="Product preview">
+            <div class="preview-header">
+              <span class="status-dot"></span>
+              <span>structured data QA</span>
+            </div>
+            <div class="preview-grid">
+              <div class="url-preview">
+                <p>"@type": "Product"</p>
+                <p>"name": "Launch Kit"</p>
+                <p>"offers": { "price": "49" }</p>
+                <p class="warn-line">priceCurrency missing</p>
+              </div>
+              <div class="brief-preview">
+                <p class="brief-label">QA result</p>
+                <strong>Fix before publish</strong>
+                <p>Required Product fields are incomplete and the visible page summary does not mention the schema product name.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="workflow" aria-labelledby="workflow-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Core workflow</p>
+            <h2 id="workflow-title">Paste JSON-LD. Get a schema markup QA brief.</h2>
+            <p>
+              This MVP analyzes pasted markup in your browser. It does not crawl URLs, automate Google's Rich Results Test,
+              use Search Console, or upload client schema.
+            </p>
+          </div>
+
+          <div class="auditor-layout">
+            <form class="auditor-panel reveal" id="auditor-form">
+              <div class="field-row">
+                <label for="schema-input">JSON-LD or HTML with JSON-LD</label>
+                <button class="text-button" type="button" id="load-sample" data-track-cta="load_sample">
+                  Load sample markup
+                </button>
+              </div>
+              <textarea
+                id="schema-input"
+                aria-describedby="privacy-note"
+                placeholder="<script type=&quot;application/ld+json&quot;>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Product&quot;,&quot;name&quot;:&quot;Example&quot;}</script>"
+              ></textarea>
+
+              <label for="visible-summary">Visible-page summary</label>
+              <textarea
+                id="visible-summary"
+                class="short-textarea"
+                placeholder="Visible page copy says: Launch Kit Pro is available for $49 and is in stock."
+              ></textarea>
+
+              <div class="form-grid compact-grid">
+                <label>
+                  Intended schema type
+                  <select id="schema-type">
+                    <option selected>Product</option>
+                    <option>Article</option>
+                    <option>Organization</option>
+                    <option>BreadcrumbList</option>
+                    <option>FAQPage</option>
+                    <option>Generic</option>
+                  </select>
+                </label>
+                <label>
+                  Page URL
+                  <input id="page-url" value="https://example.com/products/launch-kit-pro">
+                </label>
+                <label>
+                  Indexability notes
+                  <select id="indexability-notes">
+                    <option selected>Public, indexable, not behind login</option>
+                    <option>Robots or noindex not yet checked</option>
+                    <option>Behind login or gated</option>
+                    <option>Staging URL only</option>
+                  </select>
+                </label>
+                <label>
+                  Template owner
+                  <input id="template-owner" value="SEO + frontend">
+                </label>
+              </div>
+
+              <p class="privacy-note" id="privacy-note">
+                Paste only public-safe or anonymized schema. This is QA guidance, not an official Google validation result.
+              </p>
+              <div class="workflow-actions">
+                <button class="button primary" type="submit" id="generate-brief" data-track-cta="generate_brief">
+                  Generate schema QA brief
+                </button>
+                <button class="button secondary" type="button" id="copy-brief" disabled>
+                  Copy brief
+                </button>
+              </div>
+              <p class="form-error" id="workflow-error" role="alert" aria-live="polite"></p>
+            </form>
+
+            <aside class="output-panel reveal" aria-labelledby="output-title">
+              <div class="output-header">
+                <div>
+                  <p class="eyebrow">Generated brief</p>
+                  <h3 id="output-title">No audit yet</h3>
+                </div>
+                <span class="confidence-pill" id="status-pill">Waiting</span>
+              </div>
+              <div class="brief-output empty" id="brief-output" aria-live="polite">
+                Load the sample or paste JSON-LD to generate a schema markup QA brief.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="why-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why this exists</p>
+            <h2 id="why-title">A green syntax check is not the same as schema QA.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <h3>Catch missing fields</h3>
+              <p>Review Product, Article, Organization, Breadcrumb, and FAQPage basics before a template ships.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Compare visible content</h3>
+              <p>Flag stale names, offers, URLs, and page summaries that no longer match the JSON-LD block.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Copy the handoff</h3>
+              <p>Turn schema QA findings into a checklist for SEO, ecommerce, CMS, and frontend owners.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="pricing" aria-labelledby="pricing-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Pricing hypothesis</p>
+            <h2 id="pricing-title">Reserve early access before billing is connected.</h2>
+            <p>Pricing is tested through demo requests and purchase intent while payments are unavailable.</p>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <p class="plan-name">Solo</p>
+              <p class="plan-price">$19<span>/month</span></p>
+              <p>For founders and in-house marketers checking one or two sites.</p>
+              <button class="button secondary plan-button" type="button" data-plan="Solo - $19/month" data-track-cta="solo_plan">
+                Request Solo access
+              </button>
+            </article>
+            <article class="price-card featured-price reveal">
+              <p class="plan-name">Agency</p>
+              <p class="plan-price">$59<span>/month</span></p>
+              <p>For agencies and ecommerce teams that need repeatable schema QA.</p>
+              <button class="button primary plan-button" type="button" data-plan="Agency - $59/month" data-track-cta="agency_plan">
+                Request Agency access
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="shell waitlist-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Early access</p>
+            <h2 id="waitlist-title">Request the first usable build.</h2>
+            <p>This form stores locally and prepares a public-safe GitHub issue handoff.</p>
+          </div>
+
+          <form class="waitlist-form reveal" id="waitlist-form">
+            <div class="form-grid">
+              <label>
+                Work email
+                <input id="email" name="email" type="email" required value="schema-smoke@example.invalid">
+              </label>
+              <label>
+                Role
+                <select id="role" name="role">
+                  <option>Technical SEO</option>
+                  <option>Ecommerce operator</option>
+                  <option>Agency operator</option>
+                  <option>SaaS founder</option>
+                  <option>Content team</option>
+                </select>
+              </label>
+              <label>
+                Number of sites
+                <select id="site-count" name="site-count">
+                  <option>1 site</option>
+                  <option selected>2-10 sites</option>
+                  <option>11-50 sites</option>
+                  <option>50+ sites</option>
+                </select>
+              </label>
+              <label>
+                Main schema type
+                <select id="main-schema-type" name="main-schema-type">
+                  <option selected>Product</option>
+                  <option>Article</option>
+                  <option>Organization</option>
+                  <option>BreadcrumbList</option>
+                  <option>FAQPage</option>
+                </select>
+              </label>
+              <label>
+                Plan interest
+                <select id="plan" name="plan">
+                  <option>Solo - $19/month</option>
+                  <option selected>Agency - $59/month</option>
+                </select>
+              </label>
+              <label>
+                Willingness to pay
+                <select id="budget" name="budget">
+                  <option>$19/month for one site</option>
+                  <option selected>$59/month for client QA</option>
+                  <option>$149/month for ecommerce templates</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+              <label class="wide-field">
+                Biggest schema markup pain
+                <textarea id="pain" name="pain" class="short-textarea">I want to catch stale Product JSON-LD before ecommerce pages and client templates go live.</textarea>
+              </label>
+            </div>
+            <label class="checkbox-row">
+              <input id="purchase-intent" type="checkbox" checked>
+              <span>This is a real purchase-intent or pilot request if it catches structured-data template mistakes.</span>
+            </label>
+            <div class="workflow-actions">
+              <button class="button primary" type="submit" data-track-cta="waitlist_submit">Request early access</button>
+              <a class="button secondary" href="#workflow" data-track-cta="waitlist_demo">Try the auditor</a>
+            </div>
+            <p class="form-success" id="waitlist-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="handoff-panel reveal" id="handoff-panel" hidden>
+            <p class="eyebrow">Remote handoff</p>
+            <h3>Send a public-safe demo request</h3>
+            <p>Email stays local. The issue body contains role, site count, schema type, plan interest, and pain only.</p>
+            <div class="workflow-actions">
+              <a class="button primary" id="remote-intent-link" href="#" target="_blank" rel="noreferrer">Open GitHub demo request</a>
+              <button class="button secondary" type="button" id="copy-request">Copy request details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" aria-labelledby="resources-title">
+        <div class="shell resources-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">SEO asset</p>
+            <h2 id="resources-title">Schema markup QA checklist</h2>
+            <p>A practical checklist is included for teams searching for JSON-LD, structured data, Product schema, and rich-result QA guidance.</p>
+          </div>
+          <a class="resource-link reveal" href="schema-markup-qa-checklist.html" data-track-cta="seo_guide">
+            <span>Read the schema markup QA checklist</span>
+            <span aria-hidden="true">-&gt;</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="faq-title">
+        <div class="shell faq-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Structured-data constraints are explicit.</h2>
+          </div>
+          <details class="reveal">
+            <summary>Does it crawl my site?</summary>
+            <p>No. This MVP only analyzes pasted JSON-LD and the visible-page summary you provide.</p>
+          </details>
+          <details class="reveal">
+            <summary>Does it replace Google's Rich Results Test?</summary>
+            <p>No. Use this as pre-publish QA, then validate with official tools before release.</p>
+          </details>
+          <details class="reveal">
+            <summary>Does it guarantee rich results?</summary>
+            <p>No. Structured data can make pages eligible, but Google does not guarantee rich-result appearance.</p>
+          </details>
+          <details class="reveal">
+            <summary>Does it support Microdata or RDFa?</summary>
+            <p>The first MVP focuses on JSON-LD because it is the fastest static path for technical SEO and ecommerce teams.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>Schema Markup QA Briefs</span>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

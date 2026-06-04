@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schema Markup QA Checklist | Schema Markup QA Briefs</title>
+    <meta
+      name="description"
+      content="A practical schema markup QA checklist for JSON-LD syntax, required fields, visible-page match, Product offers, duplicate entities, and rich-result testing."
+    >
+    <link rel="canonical" href="https://ert93333-ops.github.io/schema-markup-qa-briefs/schema-markup-qa-checklist.html">
+    <meta property="og:title" content="Schema markup QA checklist">
+    <meta property="og:description" content="Catch JSON-LD field, syntax, visible-content, duplicate, URL, image, and rich-result readiness risks before publishing.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ert93333-ops.github.io/schema-markup-qa-briefs/schema-markup-qa-checklist.html">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-product="Schema Markup QA Briefs">
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Schema Markup QA Briefs home">
+          <span class="brand-mark" aria-hidden="true">SD</span>
+          <span>Schema Markup QA Briefs</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html#workflow">Auditor</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#waitlist">Early access</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="article-hero section">
+        <div class="shell article-layout">
+          <div class="article-copy reveal">
+            <p class="eyebrow">Schema markup QA checklist</p>
+            <h1>Review JSON-LD before publishing pages or templates.</h1>
+            <p class="hero-subtitle">
+              Use this checklist to catch syntax errors, required-field gaps, stale Product offers,
+              duplicate entities, visible-content mismatch, and rich-result test blockers.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="index.html#workflow" data-track-cta="checklist_audit">Audit schema markup</a>
+              <a class="button secondary" href="index.html#waitlist" data-track-cta="checklist_waitlist">Request early access</a>
+            </div>
+          </div>
+          <div class="product-preview reveal" aria-label="Checklist preview">
+            <div class="preview-header">
+              <span class="status-dot"></span>
+              <span>pre-publish schema review</span>
+            </div>
+            <div class="brief-preview">
+              <p class="brief-label">Checklist focus</p>
+              <strong>Valid JSON is only the first gate.</strong>
+              <p>Compare fields, visible copy, URL access, and final official tests before a template goes live.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="shell content-narrow">
+          <article class="guide-block reveal">
+            <h2>1. Confirm JSON-LD parses cleanly</h2>
+            <ol class="guide-list">
+              <li>Remove comments from JSON-LD before publishing.</li>
+              <li>Check that each script block parses as valid JSON.</li>
+              <li>Verify every entity includes `@context` and `@type`.</li>
+            </ol>
+          </article>
+
+          <article class="guide-block reveal">
+            <h2>2. Check the intended type</h2>
+            <ol class="guide-list">
+              <li>For Product, verify `name` and at least one of `offers`, `review`, or `aggregateRating`.</li>
+              <li>For Product offers, verify `price`, `priceCurrency`, `availability`, and URL fields.</li>
+              <li>For Article, verify `headline`, `author`, and `datePublished`.</li>
+              <li>For Organization, verify `name`, `url`, logo, and sameAs where useful.</li>
+            </ol>
+          </article>
+
+          <article class="guide-block reveal">
+            <h2>3. Compare markup to visible page content</h2>
+            <ol class="guide-list">
+              <li>Product names should match the visible product title.</li>
+              <li>Prices, availability, and offer URLs should match the current rendered page.</li>
+              <li>Descriptions should describe the visible page, not an older template or different SKU.</li>
+            </ol>
+          </article>
+
+          <article class="guide-block reveal">
+            <h2>4. Look for duplicate or stale entities</h2>
+            <ol class="guide-list">
+              <li>Multiple JSON-LD blocks can be valid, but template duplication should be intentional.</li>
+              <li>Check repeated Product, Organization, or Breadcrumb entities for stale names and URLs.</li>
+              <li>Retest after CMS, theme, pricing, or frontend changes.</li>
+            </ol>
+          </article>
+
+          <article class="guide-block reveal">
+            <h2>5. Run final official tests</h2>
+            <ol class="guide-list">
+              <li>Use Google's Rich Results Test for final code or URL validation.</li>
+              <li>Confirm the page is accessible, not blocked by robots.txt, noindex, login, or staging rules.</li>
+              <li>Remember that structured data can make pages eligible for rich results, but it does not guarantee appearance.</li>
+            </ol>
+          </article>
+
+          <article class="guide-block reveal">
+            <h2>Copyable schema QA handoff</h2>
+            <pre class="template-block">Schema markup QA
+
+Page URL:
+Intended schema type:
+Template owner:
+
+Syntax:
+- JSON-LD parses:
+- Number of JSON-LD blocks:
+- Detected @types:
+
+Required fields:
+- Missing:
+- Recommended:
+
+Visible-page match:
+- Name/headline:
+- Description:
+- Product price/availability:
+- URL/canonical:
+
+Duplicate/stale checks:
+- Duplicate entities:
+- Stale template fields:
+- Image URL issues:
+
+Final validation:
+- Rich Results Test:
+- Crawl/indexability:
+- Sitemap updated:</pre>
+            <a class="button primary" href="index.html#workflow" data-track-cta="template_to_product">Generate a schema QA brief</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>Schema Markup QA Briefs</span>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
